@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "pre-commit-sops-secret"
+version = "0.1.0"
+description = "This is a pre-commit hook that make sure the k8s secret is encoded with base64,  and then encrypt it via sops."
+authors = ["Songmin Li <lisongmin@protonmail.com>"]
+license = "MIT"
+readme = "README.md"
+packages = [{include = "pre_commit_sops_secret"}]
+
+[tool.poetry.scripts]
+sops-encrypt = "pre_commit_sops_secret.main:encrypt"
+
+[tool.poetry.dependencies]
+python = "^3.7"
+pyyaml = "^6.0"
+click = "^8.1.3"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

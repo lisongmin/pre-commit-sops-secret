@@ -1,0 +1,9 @@
+---
+- id: sops-encrypt
+  name: Encrypt k8s secret file via sops
+  description: >-
+    This hook make sure the k8s secret is encoded with base64,
+    and then encrypt via sops.
+  entry: sops-encrypt
+  language: python
+  types: [yaml]
